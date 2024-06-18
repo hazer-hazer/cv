@@ -9,7 +9,7 @@
             <div class="avatar-container col-auto row justify-center">
                 <q-avatar size="250px" color="purple">
                     <q-img
-                        src="/me.png"
+                        src="/cv/me.png"
                         position="20% 40%"
                         img-class="avatar"
                         ratio="1"

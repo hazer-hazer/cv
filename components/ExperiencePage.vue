@@ -33,7 +33,7 @@
                 :title="$t('betboom.title')"
                 subtitle="6 August, 2020"
                 color="red-8"
-                avatar="/betboom.png"
+                avatar="/cv/betboom.png"
             >
                 <div>
                     {{ $t('betboom.body') }}
@@ -46,7 +46,7 @@
             <q-timeline-entry
                 :title="$t('detmir.title')"
                 subtitle="29 August, 2023"
-                avatar="/detmir.png"
+                avatar="/cv/detmir.png"
                 color="blue-14"
             >
                 <div>
