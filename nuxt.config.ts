@@ -42,5 +42,16 @@ export default defineNuxtConfig({
     },
     app: {
         baseURL: '/cv/',
+        head: {
+            title: 'Ivan Gordeev CV',
+            meta: [
+                { charset: 'utf-8' },
+                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                { hid: 'description', name: 'description', content: 'Ivan Gordeev CV' },
+            ],
+            link: [
+                { rel: 'icon', type: 'image/ico', href: '/cv/favicon.ico' },
+            ],
+        },
     },
 })
