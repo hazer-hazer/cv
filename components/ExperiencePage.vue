@@ -4,6 +4,35 @@
             <q-timeline-entry heading tag="h6">
                 <section-link :label="$t('experience')" hash="#experience" class="q-pa-none" />
             </q-timeline-entry>
+            <q-timeline-entry color="purple" :title="$t('now.title')" :subtitle="experienceTotal" />
+            <q-timeline-entry
+                :title="$t('detmir.title')"
+                subtitle="29 August, 2023"
+                avatar="/cv/detmir.png"
+                color="blue-14"
+            >
+                <div>
+                    {{ $t('detmir.body') }}
+
+                    <div class="stack col row q-gutter-xs justify-start">
+                        <LogoBadge v-for="logo in ['node', 'js', 'ts', 'pg']" :key="logo" class="col-shrink" :logo="logo" />
+                    </div>
+                </div>
+            </q-timeline-entry>
+            <q-timeline-entry
+                :title="$t('betboom.title')"
+                subtitle="6 August, 2020"
+                color="red-8"
+                avatar="/cv/betboom.png"
+            >
+                <div>
+                    {{ $t('betboom.body') }}
+
+                    <div class="stack col row q-gutter-xs justify-start">
+                        <LogoBadge v-for="logo in ['ts', 'node', 'js', 'pg', 'redis', 'rmq']" :key="logo" class="col-shrink" :logo="logo" />
+                    </div>
+                </div>
+            </q-timeline-entry>
             <q-timeline-entry
                 :title="$t('freelance.title')"
                 subtitle="2018"
@@ -29,35 +58,6 @@
                     </div>
                 </div>
             </q-timeline-entry>
-            <q-timeline-entry
-                :title="$t('betboom.title')"
-                subtitle="6 August, 2020"
-                color="red-8"
-                avatar="/cv/betboom.png"
-            >
-                <div>
-                    {{ $t('betboom.body') }}
-
-                    <div class="stack col row q-gutter-xs justify-start">
-                        <LogoBadge v-for="logo in ['ts', 'node', 'js', 'pg', 'redis', 'rmq']" :key="logo" class="col-shrink" :logo="logo" />
-                    </div>
-                </div>
-            </q-timeline-entry>
-            <q-timeline-entry
-                :title="$t('detmir.title')"
-                subtitle="29 August, 2023"
-                avatar="/cv/detmir.png"
-                color="blue-14"
-            >
-                <div>
-                    {{ $t('detmir.body') }}
-
-                    <div class="stack col row q-gutter-xs justify-start">
-                        <LogoBadge v-for="logo in ['node', 'js', 'ts', 'pg']" :key="logo" class="col-shrink" :logo="logo" />
-                    </div>
-                </div>
-            </q-timeline-entry>
-            <q-timeline-entry color="purple" :title="$t('now.title')" :subtitle="experienceTotal" />
         </q-timeline>
 
         <q-separator spaced />
