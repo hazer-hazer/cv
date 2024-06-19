@@ -19,8 +19,14 @@ export default defineNuxtConfig({
         defaultLocale: 'en',
         locales: ['en', 'ru'],
         vueI18n: './i18n.config.ts',
+        detectBrowserLanguage: {
+            useCookie: true,
+        },
     },
     quasar: {
+        config: {
+            dark: 'auto',
+        },
         extras: {
             animations: 'all',
             fontIcons: [
