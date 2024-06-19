@@ -1,12 +1,10 @@
 <template>
-    <q-layout view="lhr lpR fFf">
+    <q-layout view="Lhr lpR fFf">
         <q-drawer
             v-model="leftDrawerOpen"
             side="left"
             bordered
-            :breakpoint="600"
-            class="column"
-            style="max-height: 100vh;"
+            class="column justify-start"
         >
             <!-- <template #mini>
                 <div class="column items-center">
@@ -90,7 +88,8 @@
             </q-tabs>
 
             <q-space />
-            <div class="col-auto">
+
+            <div class="col-auto column">
                 <q-list dense padding class="contact-links">
                     <q-item v-ripple clickable href="https://github.com/hazer-hazer">
                         <q-item-section avatar>
@@ -113,6 +112,12 @@
                         </q-item-section>
                     </q-item>
                 </q-list>
+
+                <q-separator />
+
+                <div class="row col q-my-sm justify-center">
+                    <q-btn class="col-auto" flat :icon="themeIcon" @click="toggleTheme" />
+                </div>
 
                 <q-separator />
 
@@ -145,7 +150,11 @@
         </q-page-container>
 
         <q-footer v-model="mobileView" reveal style="height: max-content;">
-            <q-toolbar class="row bg-white text-black q-pa-none">
+            <q-toolbar
+                class="row q-pa-none"
+                :class="$q.dark.isActive ?
+                    ['bg-dark', 'text-white'] : ['bg-white', 'text-dark']"
+            >
                 <q-tabs
                     class="col q-ma-none"
                     indicator-color="purple"
@@ -164,6 +173,23 @@
                     <q-route-tab icon="work" :to="{hash: '#experience'}" />
                     <q-route-tab icon="interests" :to="{hash: '#interests'}" />
                     <q-route-tab icon="design_services" :to="{hash: '#projects'}" />
+                    <q-btn
+                        class="col-2"
+                        style="height: 100%;"
+                        flat
+                        dense
+                        :label="locale"
+                        @click="changeLocale"
+                    />
+                    <q-btn
+                        :icon="themeIcon"
+                        class="col"
+                        flat
+                        size="sm"
+                        style="height: 100%;"
+                        dense
+                        @click="toggleTheme"
+                    />
                 </q-tabs>
             </q-toolbar>
         </q-footer>
@@ -171,18 +197,30 @@
 </template>
 
 <script lang="ts" setup>
+const { getLocaleCookie, setLocale } = useI18n()
 const localePath = useLocalePath()
 const $q = useQuasar()
 // const leftDrawerMiniBreakpoint = 700
 const footerBreakpoint = 700
 const mobileView = computed(() => $q.screen.width < footerBreakpoint)
-const leftDrawerOpen = computed(() => !mobileView.value)
+const leftDrawerOpen = computed(() => $q.screen.width >= footerBreakpoint)
 
 // const leftDrawerMini = computed(() => $q.screen.width < leftDrawerMiniBreakpoint)
 
 useHead({
     title: 'Ivan Gordeev CV',
 })
+
+const locale = computed(() => getLocaleCookie())
+const changeLocale = () => {
+    setLocale(locale.value === 'ru' ? 'en' : 'ru')
+}
+
+const themeIcon = computed(() => $q.dark.isActive ? 'dark_mode' : 'light_mode')
+const toggleTheme = () => {
+    $q.dark.toggle()
+}
+
 </script>
 
 <style lang="scss" scoped>

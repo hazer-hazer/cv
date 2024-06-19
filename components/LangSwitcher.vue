@@ -12,11 +12,10 @@
         <q-tabs
             v-model="locale"
             class="col"
-            dense
             active-color="purple"
         >
-            <q-tab name="ru" label="RU" />
-            <q-tab name="en" label="EN" />
+            <q-tab name="ru" label="RU" class="col q-px-sm" />
+            <q-tab name="en" label="EN" class="col q-px-sm" />
         </q-tabs>
     </div>
 </template>

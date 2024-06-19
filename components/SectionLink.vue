@@ -21,7 +21,7 @@ defineProps<{
 .section-link {
     text-decoration: none;
     cursor: pointer;
-    color: #111;
+    color: #aaa;
 
     &.active > .tag-icon {
         opacity: 0.5;

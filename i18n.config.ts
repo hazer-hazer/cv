@@ -41,7 +41,7 @@ export default defineI18nConfig(() => ({
             experience: 'Experience',
             freelance: {
                 title: 'Freelance',
-                body: 'Worked on some tasks found on freelance platforms.',
+                body: 'Worked part-time doing small WEB tasks.',
             },
             betboom: {
                 title: 'BetBoom',
@@ -130,11 +130,11 @@ export default defineI18nConfig(() => ({
             },
             betboom: {
                 title: 'BetBoom',
-                body: 'Integrated tens of payment providers for PayHub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
+                body: 'Интегрировал десятки платежных систем в проекте MultiHub.global и BetBoom.com, занимался бизнес логику платежных систем в BetBoom.com. Разрабатывал основную функиональность сайта',
             },
             detmir: {
                 title: 'Детский Мир',
-                body: 'Разрабатывал основной логикой маркетплейса, специализировался на оформлении и получении.',
+                body: 'Разрабатывал основную логикой маркетплейса, специализировался на оформлении и получении.',
             },
             skills: {
                 title: 'Знания',
