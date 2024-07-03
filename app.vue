@@ -167,7 +167,7 @@
         </q-page-container>
 
         <q-footer v-model="mobileView" reveal style="height: max-content;">
-            <a style="display: none;" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhazer-hazer.github.io%2Fcv%2Fru&count_bg=%23B266FF&title_bg=%2345007C&icon=pagekit.svg&icon_color=%23F0E7FF&title=HITS&edge_flat=false"></a>
+            <a v-for="url in hitCounterUrls" :key="url" style="display: none;" href="https://hits.seeyoufarm.com"><img :src="url"></a>
             <q-toolbar
                 class="row q-pa-none"
                 :class="$q.dark.isActive ?
@@ -215,7 +215,7 @@
 </template>
 
 <script lang="ts" setup>
-const { getLocaleCookie, setLocale } = useI18n()
+const { getLocaleCookie, setLocale, locales } = useI18n()
 const localePath = useLocalePath()
 const $q = useQuasar()
 // const leftDrawerMiniBreakpoint = 700
@@ -238,6 +238,11 @@ const themeIcon = computed(() => $q.dark.isActive ? 'dark_mode' : 'light_mode')
 const toggleTheme = () => {
     $q.dark.toggle()
 }
+
+const hitCounterUrls = computed(() => [
+    '',
+    ...locales.value,
+].map(locale => `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhazer-hazer.github.io%2Fcv%2F${locale}&count_bg=%23B266FF&title_bg=%2345007C&icon=pagekit.svg&icon_color=%23F0E7FF&title=HITS&edge_flat=false`))
 
 </script>
 
