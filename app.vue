@@ -33,6 +33,7 @@
 
             <div class="avatar-container col-auto row justify-center">
                 <q-avatar size="250px" color="purple">
+                    <AvatarFrame />
                     <q-img
                         src="/cv/me.png"
                         position="20% 40%"
@@ -49,6 +50,7 @@
                     </div>
                 </div>
             </div>
+
             <q-tabs
                 vertical
                 class="col-auto"
@@ -90,10 +92,10 @@
             <q-space />
 
             <div class="col-auto column">
-                <q-list dense padding class="contact-links">
+                <q-list padding class="contact-links">
                     <q-item v-ripple clickable href="https://github.com/hazer-hazer">
                         <q-item-section avatar>
-                            <q-icon class="github-logo" name="fa-brands fa-github" />
+                            <q-icon class="github-logo social-icon" name="fa-brands fa-github" />
                         </q-item-section>
                         <q-item-section>
                             <q-item-label>
@@ -103,11 +105,26 @@
                     </q-item>
                     <q-item v-ripple clickable href="https://t.me/hazer_hazer">
                         <q-item-section avatar>
-                            <q-icon class="telegram-logo" name="telegram" />
+                            <q-icon class="telegram-logo social-icon" name="telegram" />
                         </q-item-section>
                         <q-item-section>
                             <q-item-label>
                                 Telegram
+                            </q-item-label>
+                        </q-item-section>
+                    </q-item>
+                    <q-item v-ripple clickable href="https://hh.ru/resume/91d74636ff05823a120039ed1f776d4d465875">
+                        <q-item-section avatar>
+                            <q-avatar size="26px">
+                                <q-img
+                                    src="/cv/hh.png"
+                                    :ratio="1"
+                                />
+                            </q-avatar>
+                        </q-item-section>
+                        <q-item-section>
+                            <q-item-label>
+                                HeadHunter
                             </q-item-label>
                         </q-item-section>
                     </q-item>
@@ -150,6 +167,7 @@
         </q-page-container>
 
         <q-footer v-model="mobileView" reveal style="height: max-content;">
+            <a style="display: none;" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhazer-hazer.github.io%2Fcv%2Fru&count_bg=%23B266FF&title_bg=%2345007C&icon=pagekit.svg&icon_color=%23F0E7FF&title=HITS&edge_flat=false"></a>
             <q-toolbar
                 class="row q-pa-none"
                 :class="$q.dark.isActive ?
@@ -254,9 +272,9 @@ const toggleTheme = () => {
 .avatar-container {
     padding: 20px 0 0 0;
 
-    .q-avatar {
-        box-shadow: 0 0 1px 4px #80008066;
-    }
+    // .q-avatar {
+    //     box-shadow: 0 0 1px 4px #80008066;
+    // }
 }
 
 .telegram-logo {
@@ -271,6 +289,12 @@ const toggleTheme = () => {
     .q-item {
         border-radius: 0 10px 10px 0;
     }
+}
+
+.social-icon {
+    background-color: white;
+    border-radius: 50%;
+    padding: 1px;
 }
 
 </style>
