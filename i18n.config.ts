@@ -38,18 +38,23 @@ export default defineI18nConfig(() => ({
             },
             year: '{n} year | {n} years',
             month: '{n} month | {n} months',
-            experience: 'Experience',
-            freelance: {
-                title: 'Freelance',
-                body: 'Worked part-time doing small WEB tasks.',
-            },
-            betboom: {
-                title: 'BetBoom',
-                body: 'Integrated tens of payment providers for PayHub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
-            },
-            detmir: {
-                title: 'DetMir (DM-tech)',
-                body: 'Developed core functionality for marketplace, specialized on delivery and checkout.',
+            experience: {
+                title: 'Experience',
+                freelance: {
+                    title: 'Freelance',
+                    body: 'Worked part-time doing small WEB tasks.',
+                    date: '2018',
+                },
+                betboom: {
+                    title: 'BetBoom',
+                    body: 'Integrated tens of payment providers for PayHub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
+                    date: '6 August, 2020',
+                },
+                detmir: {
+                    title: 'DetMir (DM-tech)',
+                    body: 'Developed core functionality for marketplace, specialized on delivery and checkout.',
+                    date: '29 August, 2023',
+                },
             },
             skills: {
                 title: 'Skills',
@@ -114,6 +119,7 @@ export default defineI18nConfig(() => ({
             },
         },
         ru: {
+            tasks: 'Задачи',
             language: 'Язык',
             developer: 'Разработчик',
             myName: 'Иван Гордеев',
@@ -123,18 +129,28 @@ export default defineI18nConfig(() => ({
             },
             year: '0 лет | {n} год | {n} года | {n} лет',
             month: '0 months | {n} месяц | {n} месяца | {n} месяцев',
-            experience: 'Опыт работы',
-            freelance: {
-                title: 'Фриланс',
-                body: 'Немного подрабатывал, занимаясь небольшими задачами по вебу.',
-            },
-            betboom: {
-                title: 'BetBoom',
-                body: 'Интегрировал десятки платежных систем в проекте MultiHub.global и BetBoom.com, занимался бизнес логикой платежных систем в BetBoom.com. Разрабатывал основную функиональность сайта',
-            },
-            detmir: {
-                title: 'Детский Мир',
-                body: 'Занимался основной логикой маркетплейса, специализировался на оформлении и получении.',
+            experience: {
+                title: 'Опыт работы',
+                freelance: {
+                    title: 'Фриланс',
+                    body: 'Немного подрабатывал, занимаясь небольшими задачами по вебу.',
+                    date: '2018',
+                },
+                betboom: {
+                    title: 'BetBoom',
+                    body: 'Интегрировал десятки платежных систем в проекте MultiHub.global и BetBoom.com, занимался бизнес логикой платежных систем в BetBoom.com. Разрабатывал основную функиональность сайта.',
+                    date: '6 August, 2020',
+                },
+                detmir: {
+                    title: 'Детский Мир',
+                    body: 'Занимался основной логикой маркетплейса, специализировался на оформлении и получении.',
+                    date: '29 August, 2023',
+                    tasks: [
+                        'Проект "Бонусы на Любимые Категории" (как в банках)',
+                        'Внутренняя система работы с заказами для техпо',
+                        'Работа с Yandex Maps',
+                    ],
+                },
             },
             skills: {
                 title: 'Знания',

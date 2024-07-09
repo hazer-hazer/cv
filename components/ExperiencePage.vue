@@ -6,16 +6,50 @@
             </q-timeline-entry>
             <q-timeline-entry color="purple" :title="$t('now.title')" :subtitle="experienceTotal" />
             <q-timeline-entry
+                v-for="xp in experience"
+                :key="xp.title"
+                :title="$t(xp.title)"
+                :subtitle="$t(xp.date)"
+                :avatar="xp.avatar"
+                :icon="xp.icon"
+                :color="xp.color"
+            >
+                <div>
+                    <p>{{ $t(xp.body) }}</p>
+
+                    {{ xp.tasks }}
+                    <template v-if="Array.isArray(xp.tasks) && xp.tasks?.length">
+                        <span class="text-subtitle2">{{ $t('tasks') }}</span>
+                        <q-list dense>
+                            <q-item v-for="task in $t(xp.tasks)" :key="task">
+                                <q-item-section>
+                                    - {{ task }}
+                                </q-item-section>
+                            </q-item>
+                        </q-list>
+                    </template>
+                </div>
+            </q-timeline-entry>
+            <!-- <q-timeline-entry
                 :title="$t('detmir.title')"
                 subtitle="29 August, 2023"
                 avatar="/cv/detmir.png"
                 color="blue-14"
             >
                 <div>
-                    {{ $t('detmir.body') }}
+                    <p>{{ $t('detmir.body') }}</p>
+
+                    <span class="text-subtitle2">{{ $t('tasks') }}</span>
+                    <q-list dense>
+                        <q-item v-for="task in $tm('detmir.tasks')" :key="task">
+                            <q-item-section>
+                                - {{ task }}
+                            </q-item-section>
+                        </q-item>
+                    </q-list>
 
                     <div class="stack col row q-gutter-xs justify-start">
-                        <LogoBadge v-for="logo in ['node', 'js', 'ts', 'pg']" :key="logo" class="col-shrink" :logo="logo" />
+                        <LogoBadge v-for="logo in ['node', 'js', 'ts', 'pg', 'redis', 'kafka']" :key="logo" class="col-shrink" :logo="logo" />
                     </div>
                 </div>
             </q-timeline-entry>
@@ -25,12 +59,10 @@
                 color="red-8"
                 avatar="/cv/betboom.png"
             >
-                <div>
-                    {{ $t('betboom.body') }}
+                <p>{{ $t('betboom.body') }}</p>
 
-                    <div class="stack col row q-gutter-xs justify-start">
-                        <LogoBadge v-for="logo in ['ts', 'node', 'js', 'pg', 'redis', 'rmq']" :key="logo" class="col-shrink" :logo="logo" />
-                    </div>
+                <div class="stack col row q-gutter-xs justify-start">
+                    <LogoBadge v-for="logo in ['ts', 'node', 'js', 'pg', 'redis', 'rmq']" :key="logo" class="col-shrink" :logo="logo" />
                 </div>
             </q-timeline-entry>
             <q-timeline-entry
@@ -40,24 +72,13 @@
                 icon="groups_3"
             >
                 <div>
-                    {{ $t('freelance.body') }}
+                    <p>{{ $t('freelance.body') }}</p>
 
                     <div class="stack col row q-gutter-xs justify-start">
                         <LogoBadge v-for="logo in ['php', 'html_css', 'js', 'ts', 'node']" :key="logo" class="col-shrink" :logo="logo" />
-                        <!-- <q-badge class="
-                            php-logo"
-                        >
-                            <q-icon name="php" />
-                            </q-badge>
-                            <q-badge class="js-logo">
-                                <q-icon name="javascript" />
-                            </q-badge>
-                            <q-badge class="html-logo">
-                                <q-icon name="html" />
-                            </q-badge> -->
-                    </div>
-                </div>
-            </q-timeline-entry>
+            </div>
+            </div>
+            </q-timeline-entry> -->
         </q-timeline>
 
         <q-separator spaced />
@@ -66,7 +87,7 @@
             <section-link class="q-py-md" :label="$t('skills.title')" hash="#experience" />
 
             <div v-for="xp in XP" :key="xp.label" class="tech-xp q-pb-sm">
-                <span class=" text-subtitle1">{{ xp.label }}</span>
+                <span class=" text-subtitle1">{{ $t(xp.label) }}</span>
                 <div class="row items-center">
                     <q-linear-progress
                         class="col"
@@ -86,7 +107,33 @@
 
 <script lang="ts" setup>
 const { t } = useI18n()
-console.log(useI18n())
+
+const experience = [{
+    title: 'experience.detmir.title',
+    body: 'experience.detmir.body',
+    date: 'experience.detmir.date',
+    avatar: '/cv/detmir.png',
+    color: 'blue-14',
+    stack: ['node', 'js', 'ts', 'pg', 'redis', 'kafka'],
+    tasks: 'experience.detmir.tasks',
+}, {
+    title: 'experience.betboom.title',
+    body: 'experience.betboom.body',
+    date: 'experience.betboom.date',
+    avatar: '/cv/betboom.png',
+    color: 'red-8',
+    stack: ['ts', 'node', 'js', 'pg', 'redis', 'rmq'],
+    tasks: 'experience.betboom.tasks',
+}, {
+    title: 'experience.freelance.title',
+    body: 'experience.freelance.body',
+    date: 'experience.freelance.date',
+    icon: 'groups_3',
+    color: 'teal-6',
+    stack: ['php', 'html_css', 'js', 'ts', 'node'],
+    tasks: 'experience.freelance.tasks',
+}]
+
 const experienceTotal = computed(() => {
     const { years, months } = yearDuration(new Date('6 august, 2020'))
 
@@ -109,7 +156,7 @@ const XP = [{
     color: 'js',
     professionally: true,
 }, {
-    label: t('skills.pgLabel'),
+    label: 'skills.pgLabel',
     xp: 0.69,
     color: 'pg',
     professionally: true,

@@ -33,7 +33,6 @@
 
             <div class="avatar-container col-auto row justify-center">
                 <q-avatar size="250px" color="purple">
-                    <AvatarFrame />
                     <q-img
                         src="/cv/me.png"
                         position="20% 40%"
@@ -133,7 +132,13 @@
                 <q-separator />
 
                 <div class="row col q-my-sm justify-center">
-                    <q-btn class="col-auto" flat :icon="themeIcon" @click="toggleTheme" />
+                    <q-btn
+                        ref="toggleThemeBtn"
+                        class="col-auto"
+                        flat
+                        :icon="themeIcon"
+                        @click="toggleTheme"
+                    />
                 </div>
 
                 <q-separator />
@@ -166,7 +171,7 @@
             </div>
         </q-page-container>
 
-        <q-footer v-model="mobileView" reveal style="height: max-content;">
+        <q-footer v-if="mobileView" v-model="mobileView" reveal style="height: max-content;">
             <a v-for="url in hitCounterUrls" :key="url" style="display: none;" href="https://hits.seeyoufarm.com"><img :src="url"></a>
             <q-toolbar
                 class="row q-pa-none"
@@ -200,6 +205,7 @@
                         @click="changeLocale"
                     />
                     <q-btn
+                        ref="toggleThemeBtn"
                         :icon="themeIcon"
                         class="col"
                         flat
@@ -215,6 +221,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { QToggle } from 'quasar'
+
 const { getLocaleCookie, setLocale, locales } = useI18n()
 const localePath = useLocalePath()
 const $q = useQuasar()
@@ -234,9 +242,47 @@ const changeLocale = () => {
     setLocale(locale.value === 'ru' ? 'en' : 'ru')
 }
 
+const toggleThemeBtn = ref<InstanceType<typeof QToggle> | null>(null)
 const themeIcon = computed(() => $q.dark.isActive ? 'dark_mode' : 'light_mode')
-const toggleTheme = () => {
-    $q.dark.toggle()
+const toggleTheme = async () => {
+    if (!toggleThemeBtn.value || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        $q.dark.toggle()
+        return
+    }
+
+    await document.startViewTransition?.(() => {
+        $q.dark.toggle()
+        watch(() => $q.dark.isActive, (value) => {
+            console.log('set theme dark', value)
+
+            $q.dark.set(value)
+        }, { once: true, flush: 'sync' })
+        // watchSyncEffect(() => {
+        // }, {
+        // })
+    }).ready
+
+    const { top, left, width, height } = toggleThemeBtn.value.$el.getBoundingClientRect()
+
+    const x = left + width / 2
+    const y = top + height / 2
+    const right = window.innerWidth - left
+    const bottom = window.innerHeight - top
+    const maxRadius = Math.hypot(
+        Math.max(left, right),
+        Math.max(top, bottom),
+    )
+
+    document.documentElement.animate({
+        clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${maxRadius}px at ${x}px ${y}px)`,
+        ],
+    }, {
+        duration: 500,
+        easing: 'ease-in-out',
+        pseudoElement: '::view-transition-new(root)',
+    })
 }
 
 const hitCounterUrls = computed(() => [
@@ -246,7 +292,7 @@ const hitCounterUrls = computed(() => [
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .q-page {
     min-height: max-content !important;
 }
@@ -300,6 +346,12 @@ const hitCounterUrls = computed(() => [
     background-color: white;
     border-radius: 50%;
     padding: 1px;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 </style>

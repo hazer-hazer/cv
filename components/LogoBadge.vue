@@ -14,13 +14,13 @@
 
 const LOGOS = {
     js: {
-        label: 'JS',
+        label: 'JavaScript',
     },
     html_css: {
         label: 'HTML/CSS',
     },
     ts: {
-        label: 'TS',
+        label: 'TypeScript',
     },
     node: {
         label: 'Node.JS',
@@ -37,13 +37,16 @@ const LOGOS = {
     rmq: {
         label: 'RabbitMQ',
     },
+    kafka: {
+        label: 'kafka',
+    },
 }
 
 const props = defineProps<{
     logo: string
 }>()
 const logo = props.logo
-const { label } = LOGOS[props.logo]
+const { label } = LOGOS[props.logo as keyof typeof LOGOS]
 </script>
 
 <style lang="scss" scoped>
@@ -81,5 +84,9 @@ const { label } = LOGOS[props.logo]
 }
 .rmq-logo {
     background-color: #ff6600;
+}
+.kafka-logo {
+    background-color: black;
+    color: white;
 }
 </style>
