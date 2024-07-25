@@ -47,7 +47,7 @@ export default defineI18nConfig(() => ({
                     date: '2018',
                 },
                 betboom: {
-                    title: 'BetBoom',
+                    title: 'BetBoom & Multihub.Global',
                     body: 'Integrated tens of payment providers for PayHub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
                     date: '6 August, 2020',
                     tasks: [
