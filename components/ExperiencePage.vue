@@ -27,6 +27,10 @@
                             </q-item>
                         </q-list>
                     </template>
+
+                    <div class="stack col row q-gutter-xs justify-start">
+                        <LogoBadge v-for="logo in xp.stack" :key="logo" class="col-shrink" :logo="logo" />
+                    </div>
                 </div>
             </q-timeline-entry>
             <!-- <q-timeline-entry

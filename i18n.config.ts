@@ -125,6 +125,7 @@ export default defineI18nConfig(() => ({
                     subtitle: 'GUI library for embedded rust',
                     body: 'Simple, but powerful universal GUI library inspired on Elm (iced) architecture. Packs most common component kinds such as Button, Scrollable, etc. Works with any type of display, even monochrome. Fully input-agnostic: developed with usage of single encoder in mind.',
                     github: 'https://github.com/hazer-hazer/embedded-ui',
+                    crates: 'https://crates.io/crates/embedded-ui',
                 }, {
                     name: 'paw1',
                     image: '/cv/paw1.png',
@@ -240,6 +241,7 @@ export default defineI18nConfig(() => ({
                     subtitle: 'Rust GUI библиотека для встроенных систем',
                     body: 'Простая, но мощная универсальная GUI библиотека вдохновленная Elm (iced) архитектурой. Включает стандартные типы компонентов, такие как Button, Scrollable и т.д. Работает с любым типом дисплеев, даже одноцветным. Поддерживает любые способы управления: разрабатывалась под возможность управления одним энкодером.',
                     github: 'https://github.com/hazer-hazer/embedded-ui',
+                    crates: 'https://crates.io/crates/embedded-ui',
                 }, {
                     name: 'paw1',
                     image: '/cv/paw1.png',

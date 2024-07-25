@@ -26,6 +26,13 @@
                             icon="fa-brands fa-github"
                             target="_blank"
                         />
+                        <q-btn
+                            v-if="project.crates"
+                            flat
+                            icon="img:/cv/crates-io.png"
+                            target="_blank"
+                            :href="project.crates"
+                        />
                     </q-card-actions>
                 </q-card>
             </div>
