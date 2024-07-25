@@ -176,7 +176,7 @@
         </q-drawer>
 
         <q-page-container>
-            <div class="q-px-sm">
+            <div class="q-px-sm" style="max-width: 1000px;">
                 <AboutMePage id="about" />
                 <q-separator inset />
                 <ExperiencePage id="experience" />

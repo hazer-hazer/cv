@@ -110,9 +110,9 @@
                         rounded
                         :color="xp.color"
                     />
-                    <div v-if="xp.professionally" class="col-auto text-caption q-px-md">
+                    <!-- <div v-if="xp.professionally" class="col-auto text-caption q-px-md">
                         {{ $t('skills.professionally') }}
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
