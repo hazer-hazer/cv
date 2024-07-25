@@ -38,6 +38,7 @@ export default defineI18nConfig(() => ({
             year: '{n} year | {n} years',
             month: '{n} month | {n} months',
             finalWord: 'That\'s all for now, good luck 👋',
+            nodeJsDeveloper: 'Node.JS Developer',
             experience: {
                 title: 'Experience',
                 freelance: {
@@ -60,9 +61,10 @@ export default defineI18nConfig(() => ({
                     body: 'Developed core functionality for marketplace, specialized on delivery and checkout.',
                     date: '29 August, 2023',
                     tasks: [
+                        'Order checkout logic development',
                         '"Favorite categories bonuses" project',
-                        'Internal CMS ',
-                        'Work with Yandex Maps',
+                        'Orders admin panel',
+                        'Yandex Maps API',
                     ],
                 },
             },
@@ -154,6 +156,7 @@ export default defineI18nConfig(() => ({
             year: '0 лет | {n} год | {n} года | {n} лет',
             month: '0 months | {n} месяц | {n} месяца | {n} месяцев',
             finalWord: 'Пока это всё, удачи 👋',
+            nodeJsDeveloper: 'Node.JS Developer',
             experience: {
                 title: 'Опыт работы',
                 freelance: {

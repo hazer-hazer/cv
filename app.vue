@@ -56,6 +56,7 @@
                 dense
                 no-caps
                 switch-indicator
+                inline-label
                 indicator-color="purple"
             >
                 <q-route-tab
@@ -92,7 +93,7 @@
 
             <div class="col-auto column">
                 <q-list padding class="contact-links">
-                    <q-item v-ripple clickable href="https://github.com/hazer-hazer">
+                    <q-item v-ripple clickable href="https://github.com/hazer-hazer" target="_blank">
                         <q-item-section avatar>
                             <q-icon class="github-logo social-icon" name="fa-brands fa-github" />
                         </q-item-section>
@@ -102,7 +103,7 @@
                             </q-item-label>
                         </q-item-section>
                     </q-item>
-                    <q-item v-ripple clickable href="https://t.me/hazer_hazer">
+                    <q-item v-ripple clickable href="https://t.me/hazer_hazer" target="_blank">
                         <q-item-section avatar>
                             <q-icon class="telegram-logo social-icon" name="telegram" />
                         </q-item-section>
@@ -112,7 +113,7 @@
                             </q-item-label>
                         </q-item-section>
                     </q-item>
-                    <q-item v-ripple clickable href="https://hh.ru/resume/91d74636ff05823a120039ed1f776d4d465875">
+                    <q-item v-ripple clickable href="https://hh.ru/resume/91d74636ff05823a120039ed1f776d4d465875" target="_blank">
                         <q-item-section avatar>
                             <q-avatar size="26px">
                                 <q-img
@@ -124,6 +125,21 @@
                         <q-item-section>
                             <q-item-label>
                                 HeadHunter
+                            </q-item-label>
+                        </q-item-section>
+                    </q-item>
+                    <q-item v-ripple clickable href="https://stackoverflow.com/users/10563181/hazer-hazer" target="_blank">
+                        <q-item-section avatar>
+                            <q-avatar size="26px">
+                                <q-img
+                                    src="/cv/stackoverflow.png"
+                                    :ratio="1"
+                                />
+                            </q-avatar>
+                        </q-item-section>
+                        <q-item-section>
+                            <q-item-label>
+                                stack<b style="padding-left: 1px;">overflow</b>
                             </q-item-label>
                         </q-item-section>
                     </q-item>

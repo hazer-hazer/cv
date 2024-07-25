@@ -8,12 +8,23 @@
             <q-timeline-entry
                 v-for="xp in experience"
                 :key="xp.title"
-                :title="xp.title"
                 :subtitle="xp.date"
                 :avatar="xp.avatar"
                 :icon="xp.icon"
                 :color="xp.color"
             >
+                <template #title>
+                    <h6 class="q-timeline__title">
+                        {{ xp.title }}
+                    </h6>
+                    <h6
+                        class="text-subtitle text-weight-light
+ q-ma-none"
+                    >
+                        {{ xp.job }}
+                    </h6>
+                </template>
+
                 <div>
                     <p>{{ $t(xp.body) }}</p>
 
@@ -28,7 +39,7 @@
                         </q-list>
                     </template>
 
-                    <div class="stack col row q-gutter-xs justify-start">
+                    <div class="stack col row q-gutter-sm justify-start" style="max-width: 500px;">
                         <LogoBadge v-for="logo in xp.stack" :key="logo" class="col-shrink" :logo="logo" />
                     </div>
                 </div>
@@ -113,6 +124,7 @@ const { t, tm } = useI18n()
 
 const experience = computed<{
     title: string
+    job: string
     body: string
     date: string
     avatar?: string
@@ -122,19 +134,21 @@ const experience = computed<{
     tasks: string[]
 }[]>(() => [{
     title: 'experience.detmir.title',
+    job: 'nodeJsDeveloper',
     body: 'experience.detmir.body',
     date: 'experience.detmir.date',
     avatar: '/cv/detmir.png',
     color: 'blue-14',
-    stack: ['node', 'js', 'ts', 'pg', 'redis', 'kafka'],
+    stack: ['node', 'js', 'ts', 'pg', 'redis', 'kafka', 'k8s', 'jenkins'],
     tasks: 'experience.detmir.tasks',
 }, {
     title: 'experience.betboom.title',
+    job: 'nodeJsDeveloper',
     body: 'experience.betboom.body',
     date: 'experience.betboom.date',
     avatar: '/cv/betboom.png',
     color: 'red-8',
-    stack: ['ts', 'node', 'js', 'pg', 'redis', 'rmq'],
+    stack: ['node', 'ts', 'js', 'pg', 'redis', 'rmq', 'k8s'],
     tasks: 'experience.betboom.tasks',
 }, {
     title: 'experience.freelance.title',
@@ -147,6 +161,7 @@ const experience = computed<{
 }].map(xp => ({
     ...xp,
     title: t(xp.title),
+    job: t(xp.job ?? ''),
     body: t(xp.body),
     date: t(xp.date),
     tasks: tm(xp.tasks),

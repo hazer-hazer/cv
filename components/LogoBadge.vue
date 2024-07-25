@@ -40,6 +40,12 @@ const LOGOS = {
     kafka: {
         label: 'kafka',
     },
+    k8s: {
+        label: 'Kubernetes & Docker',
+    },
+    jenkins: {
+        label: 'Jenkins',
+    },
 }
 
 const props = defineProps<{
@@ -87,6 +93,14 @@ const { label } = LOGOS[props.logo as keyof typeof LOGOS]
 }
 .kafka-logo {
     background-color: black;
+    color: white;
+}
+.k8s-logo {
+    background-color: #3970e5;
+    color: white;
+}
+.jenkins-logo {
+    background-color: #395565;
     color: white;
 }
 </style>
