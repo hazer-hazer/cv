@@ -4,8 +4,6 @@ export default defineI18nConfig(() => ({
     fallbackLocale: 'en',
     pluralRules: {
         ru: (choice, choicesLength) => {
-            console.log('kek')
-
             if (choice === 0) {
                 return 0
             }
@@ -28,6 +26,7 @@ export default defineI18nConfig(() => ({
     },
     messages: {
         en: {
+            tasks: 'Some tasks',
             language: 'Language',
             developer: 'Developer',
             myName: 'Ivan Gordeev',
@@ -38,6 +37,7 @@ export default defineI18nConfig(() => ({
             },
             year: '{n} year | {n} years',
             month: '{n} month | {n} months',
+            finalWord: 'That\'s all for now, good luck 👋',
             experience: {
                 title: 'Experience',
                 freelance: {
@@ -49,11 +49,21 @@ export default defineI18nConfig(() => ({
                     title: 'BetBoom',
                     body: 'Integrated tens of payment providers for PayHub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
                     date: '6 August, 2020',
+                    tasks: [
+                        'Create new payment provider services',
+                        'Was responsible for payment systems in betboom.com project',
+                        'Developing core functionalities of betboom.com',
+                    ],
                 },
                 detmir: {
                     title: 'DetMir (DM-tech)',
                     body: 'Developed core functionality for marketplace, specialized on delivery and checkout.',
                     date: '29 August, 2023',
+                    tasks: [
+                        '"Favorite categories bonuses" project',
+                        'Internal CMS ',
+                        'Work with Yandex Maps',
+                    ],
                 },
             },
             skills: {
@@ -66,7 +76,7 @@ export default defineI18nConfig(() => ({
             },
             interests: {
                 title: 'My interests',
-                interests: [{
+                list: [{
                     name: 'embedded',
                     title: 'Embedded systems',
                     subtitle: 'Getting in touch with software you create',
@@ -109,17 +119,30 @@ export default defineI18nConfig(() => ({
                     body: 'Impact is a always-WIP programming language sandbox created to practice and learn new compiler-related topics including algebraic effects, data flow analysis and refinement types',
                     github: 'https://github.com/hazer-hazer/impact',
                 }, {
+                    name: 'embedded-ui',
+                    image: '/cv/embedded-ui.png',
+                    title: 'Rust embedded-ui',
+                    subtitle: 'GUI library for embedded rust',
+                    body: 'Simple, but powerful universal GUI library inspired on Elm (iced) architecture. Packs most common component kinds such as Button, Scrollable, etc. Works with any type of display, even monochrome. Fully input-agnostic: developed with usage of single encoder in mind.',
+                    github: 'https://github.com/hazer-hazer/embedded-ui',
+                }, {
                     name: 'paw1',
                     image: '/cv/paw1.png',
                     title: 'Paw1',
                     subtitle: 'First iteration of my Pocket Audio Workstation',
                     body: 'Currently in work project PAW1 is a sandbox for my much more bigger project Pocket Audio Workstation. The idea is to create compact handy instrument to create music wherever you are. Paw1 is a wavetable synthesizer with tiny display and three encoders, featuring simple audio effects.',
                     github: 'https://github.com/paw-music/paw-one',
+                }, {
+                    name: 'cv',
+                    image: '/cv/cv.png',
+                    title: 'This website',
+                    subtitle: 'ha-ha',
+                    github: 'https://github.com/hazer-hazer/cv',
                 }],
             },
         },
         ru: {
-            tasks: 'Задачи',
+            tasks: 'Некоторые задачи',
             language: 'Язык',
             developer: 'Разработчик',
             myName: 'Иван Гордеев',
@@ -129,6 +152,7 @@ export default defineI18nConfig(() => ({
             },
             year: '0 лет | {n} год | {n} года | {n} лет',
             month: '0 months | {n} месяц | {n} месяца | {n} месяцев',
+            finalWord: 'Пока это всё, удачи 👋',
             experience: {
                 title: 'Опыт работы',
                 freelance: {
@@ -140,6 +164,11 @@ export default defineI18nConfig(() => ({
                     title: 'BetBoom',
                     body: 'Интегрировал десятки платежных систем в проекте MultiHub.global и BetBoom.com, занимался бизнес логикой платежных систем в BetBoom.com. Разрабатывал основную функиональность сайта.',
                     date: '6 August, 2020',
+                    tasks: [
+                        'Создание новых сервисов под платежных провайдеров',
+                        'Был ответственнен за платежные системы в betboom.com',
+                        'Developing core functionalities of betboom.com',
+                    ],
                 },
                 detmir: {
                     title: 'Детский Мир',
@@ -162,7 +191,7 @@ export default defineI18nConfig(() => ({
             },
             interests: {
                 title: 'Мои интересы',
-                interests: [{
+                list: [{
                     name: 'embedded',
                     title: 'Микроконтроллеры',
                     subtitle: 'Оживлять железо',
@@ -205,12 +234,25 @@ export default defineI18nConfig(() => ({
                     body: 'Impact это язык песочница, созданный для практики в темах разработки компиляторов, таких как: уточняющие типы, алгебраические эффеты и анализ потоков данных',
                     github: 'https://github.com/hazer-hazer/impact',
                 }, {
+                    name: 'embedded-ui',
+                    image: '/cv/embedded-ui.png',
+                    title: 'Rust embedded-ui',
+                    subtitle: 'Rust GUI библиотека для встроенных систем',
+                    body: 'Простая, но мощная универсальная GUI библиотека вдохновленная Elm (iced) архитектурой. Включает стандартные типы компонентов, такие как Button, Scrollable и т.д. Работает с любым типом дисплеев, даже одноцветным. Поддерживает любые способы управления: разрабатывалась под возможность управления одним энкодером.',
+                    github: 'https://github.com/hazer-hazer/embedded-ui',
+                }, {
                     name: 'paw1',
                     image: '/cv/paw1.png',
                     title: 'Paw1',
                     subtitle: 'Первая итерация моей карманной DAW',
                     body: 'В данный момент я активно изучаю тему работы с цифровыми сигналами и разрабатываю первую модель, являющуюя частью более крупного проекта карманной аудио станции. Идея в том, чтобы иметь возможность в любом месте записывать музыку, как это делают в DAW на компьютере. Paw1 это wavetable синтезатор с 3 энкодерами, маленьким OLED дисплеем и простыми аудио эффектами',
                     github: 'https://github.com/paw-music/paw-one',
+                }, {
+                    name: 'cv',
+                    image: '/cv/cv.png',
+                    title: 'Этот сайт',
+                    subtitle: 'хаха',
+                    github: 'https://github.com/hazer-hazer/cv',
                 }],
             },
         },

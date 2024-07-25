@@ -3,7 +3,7 @@
         <section-link class="q-py-md" :label="$t('interests.title')" hash="#interests" />
 
         <div class="row items-stretch q-col-gutter-md">
-            <div v-for="interest in INTERESTS" :key="interest.title" class="col-md-6 col-xs-12">
+            <div v-for="interest in $tm('interests.list')" :key="interest.title" class="col-md-6 col-xs-12">
                 <q-card class="interest-card col-6" :class="interest.name" bordered>
                     <q-card-section class="q-pb-sm">
                         <div class="text-h6 row">
@@ -24,10 +24,10 @@
 </template>
 
 <script lang="ts" setup>
-const { tm } = useI18n()
+// const { tm } = useI18n()
 
-const INTERESTS = tm('interests.interests')
-console.log(INTERESTS)
+// const INTERESTS = tm('interests.interests')
+// console.log(INTERESTS)
 </script>
 
 <style lang="scss" scoped>

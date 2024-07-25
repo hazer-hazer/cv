@@ -66,7 +66,7 @@
                     replace
                 />
                 <q-route-tab
-                    :label="$t('experience')"
+                    :label="$t('experience.title')"
                     :to="localePath({path: '/', hash: '#experience'})"
                     class="tab"
                     exact
@@ -168,6 +168,12 @@
                 <InterestsPage id="interests" />
                 <q-separator inset />
                 <ProjectsPage id="projects" />
+                <q-separator inset />
+                <q-page padding>
+                    <p class="text-h4 text-center q-pb-lg">
+                        {{ $t('finalWord') }}
+                    </p>
+                </q-page>
             </div>
         </q-page-container>
 
@@ -253,8 +259,6 @@ const toggleTheme = async () => {
     await document.startViewTransition?.(() => {
         $q.dark.toggle()
         watch(() => $q.dark.isActive, (value) => {
-            console.log('set theme dark', value)
-
             $q.dark.set(value)
         }, { once: true, flush: 'sync' })
         // watchSyncEffect(() => {

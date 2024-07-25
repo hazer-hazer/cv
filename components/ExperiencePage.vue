@@ -8,8 +8,8 @@
             <q-timeline-entry
                 v-for="xp in experience"
                 :key="xp.title"
-                :title="$t(xp.title)"
-                :subtitle="$t(xp.date)"
+                :title="xp.title"
+                :subtitle="xp.date"
                 :avatar="xp.avatar"
                 :icon="xp.icon"
                 :color="xp.color"
@@ -17,11 +17,10 @@
                 <div>
                     <p>{{ $t(xp.body) }}</p>
 
-                    {{ xp.tasks }}
-                    <template v-if="Array.isArray(xp.tasks) && xp.tasks?.length">
+                    <template v-if="!!xp.tasks.length">
                         <span class="text-subtitle2">{{ $t('tasks') }}</span>
                         <q-list dense>
-                            <q-item v-for="task in $t(xp.tasks)" :key="task">
+                            <q-item v-for="task in xp.tasks" :key="task">
                                 <q-item-section>
                                     - {{ task }}
                                 </q-item-section>
@@ -106,9 +105,18 @@
 </template>
 
 <script lang="ts" setup>
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
-const experience = [{
+const experience = computed<{
+    title: string
+    body: string
+    date: string
+    avatar?: string
+    icon?: string
+    color: string
+    stack: string[]
+    tasks: string[]
+}[]>(() => [{
     title: 'experience.detmir.title',
     body: 'experience.detmir.body',
     date: 'experience.detmir.date',
@@ -132,7 +140,13 @@ const experience = [{
     color: 'teal-6',
     stack: ['php', 'html_css', 'js', 'ts', 'node'],
     tasks: 'experience.freelance.tasks',
-}]
+}].map(xp => ({
+    ...xp,
+    title: t(xp.title),
+    body: t(xp.body),
+    date: t(xp.date),
+    tasks: tm(xp.tasks),
+})))
 
 const experienceTotal = computed(() => {
     const { years, months } = yearDuration(new Date('6 august, 2020'))

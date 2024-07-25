@@ -58,6 +58,9 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', type: 'image/ico', href: '/cv/favicon.ico' },
             ],
+            script: [
+                'https://raw.githubusercontent.com/amiad/screenshot.js/master/screenshot.js',
+            ],
         },
     },
 })

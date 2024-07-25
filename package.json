@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "quasar": "^2.14.2",
     "sass": "^1.69.5",
     "vue": "^3.4.31",
