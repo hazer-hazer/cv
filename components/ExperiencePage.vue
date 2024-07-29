@@ -2,7 +2,7 @@
     <q-page padding>
         <q-timeline color="purple" layout="dense">
             <q-timeline-entry heading tag="h6">
-                <section-link :label="$t('experience')" hash="#experience" class="q-pa-none" />
+                <section-link :label="$t('experience.title')" hash="#experience" class="q-pa-none" />
             </q-timeline-entry>
             <q-timeline-entry color="purple" :title="$t('now.title')" :subtitle="experienceTotal" />
             <q-timeline-entry
@@ -18,8 +18,7 @@
                         {{ xp.title }}
                     </h6>
                     <h6
-                        class="text-subtitle text-weight-light
- q-ma-none"
+                        class="text-subtitle text-weight-light q-ma-none"
                     >
                         {{ xp.job }}
                     </h6>
