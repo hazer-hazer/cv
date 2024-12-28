@@ -22,6 +22,7 @@ export default defineNuxtConfig({
         detectBrowserLanguage: {
             useCookie: true,
         },
+        types: 'composition',
     },
     quasar: {
         config: {
@@ -56,7 +57,7 @@ export default defineNuxtConfig({
                 { hid: 'description', name: 'description', content: 'Ivan Gordeev CV' },
             ],
             link: [
-                { rel: 'icon', type: 'image/ico', href: '/cv/favicon.ico' },
+                { rel: 'icon', type: 'image/png', href: '/cv/favicon.ico' },
             ],
             script: [
                 'https://raw.githubusercontent.com/amiad/screenshot.js/master/screenshot.js',

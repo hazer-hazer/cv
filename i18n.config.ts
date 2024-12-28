@@ -87,14 +87,14 @@ export default defineI18nConfig(() => ({
                 }, {
                     name: 'music',
                     title: 'Music',
-                    subtitle: 'Playing. Composing. Listening.',
-                    body: 'Music was always with me, I played drums in ensemble, rock groups. Self-taught piano and guitar, and now making music already for 6 years. Like music overlaps with my other interests.',
+                    subtitle: 'Playing. Composing. Discovering.',
+                    body: 'Music was always with me, I played drums in ensemble, rock groups. Self-taught piano and guitar player, and now composing already for 7 years. Like when music overlaps with my other interests.',
                     icon: 'music_note',
                 }, {
                     name: 'compiler',
                     title: 'Programming Language Theory',
                     subtitle: 'Sometimes you just want to reinvent the wheel',
-                    body: 'For a long time I was attracted by theory of programming languages, the math behind compilers, type theory, parsing and everything that makes such complex systems I use everyday. There\'re tons of unpopular interesting programming languages with smart solutions inside. Though I didn\'t become professional compiler developer, I learned a lot about programming designing my languages and diving into sources of big projects.',
+                    body: 'For a long time I was attracted by theory of programming languages, the math behind compilers, type theory, parsing and everything that makes such complex systems I use everyday. There\'re tons of unpopular interesting programming languages with smart solutions inside. Though I didn\'t become professional compiler developer, I learned a lot about programming while designing my languages and diving into sources of big projects.',
                     icon: 'data_object',
                 }, {
                     name: 'electronics',
@@ -121,6 +121,13 @@ export default defineI18nConfig(() => ({
                     body: 'Impact is a always-WIP programming language sandbox created to practice and learn new compiler-related topics including algebraic effects, data flow analysis and refinement types',
                     github: 'https://github.com/hazer-hazer/impact',
                 }, {
+                    name: 'rsact',
+                    image: 'https://raw.githubusercontent.com/hazer-hazer/rsact/refs/heads/master/rsact.png',
+                    title: 'rsact',
+                    subtitle: 'UI framework powered by fine-grained reactivity targeting embedded Rust',
+                    github: 'https://github.com/hazer-hazer/rsact',
+                }, {
+                    abandoned: true,
                     name: 'embedded-ui',
                     image: '/cv/embedded-ui.png',
                     title: 'Rust embedded-ui',
@@ -238,6 +245,13 @@ export default defineI18nConfig(() => ({
                     body: 'Impact это язык песочница, созданный для практики в темах разработки компиляторов, таких как: уточняющие типы, алгебраические эффеты и анализ потоков данных',
                     github: 'https://github.com/hazer-hazer/impact',
                 }, {
+                    name: 'rsact',
+                    image: 'https://raw.githubusercontent.com/hazer-hazer/rsact/refs/heads/master/rsact.png',
+                    title: 'rsact',
+                    subtitle: 'UI framework powered by fine-grained reactivity targeting embedded Rust',
+                    github: 'https://github.com/hazer-hazer/rsact',
+                }, {
+                    abandoned: true,
                     name: 'embedded-ui',
                     image: '/cv/embedded-ui.png',
                     title: 'Rust embedded-ui',
