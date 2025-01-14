@@ -48,7 +48,7 @@ export default defineI18nConfig(() => ({
                 },
                 betboom: {
                     title: 'BetBoom & Multihub.Global',
-                    body: 'Integrated tens of payment providers for PayHub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
+                    body: 'Integrated tens of payment providers for Multihub.Global (sub-project) and BetBoom.com, developed payment systems orchestration solutions for BetBoom.com. Worked on common functionalities in BetBoom.com.',
                     date: '6 August, 2020',
                     tasks: [
                         'Create new payment provider services',
@@ -58,13 +58,23 @@ export default defineI18nConfig(() => ({
                 },
                 detmir: {
                     title: 'DetMir (DM-tech)',
-                    body: 'Developed core functionality for marketplace, specialized on delivery and checkout.',
+                    body: 'Developing core functionality for marketplace, specialized on delivery and checkout.',
                     date: '29 August, 2023',
                     tasks: [
                         'Order checkout logic development',
                         '"Favorite categories bonuses" project',
                         'Orders admin panel',
-                        'Yandex Maps API',
+                        'Working Yandex Maps API',
+                    ],
+                },
+                '01tech': {
+                    title: '01.Tech',
+                    body: 'Platform tech services team.',
+                    date: '23 September, 2024',
+                    tasks: [
+                        'Automatizing domains and SSL certificates registration',
+                        'High-loaded cache optimizations and synchronizations. Multi-level caching: nginx, redis, in-memory LRU',
+                        'White-label and sub-tenant data distribution',
                     ],
                 },
             },
@@ -136,12 +146,12 @@ export default defineI18nConfig(() => ({
                     github: 'https://github.com/hazer-hazer/embedded-ui',
                     crates: 'https://crates.io/crates/embedded-ui',
                 }, {
-                    name: 'paw1',
-                    image: '/cv/paw1.png',
-                    title: 'Paw1',
+                    name: 'paw0',
+                    image: '/cv/paw0.jpg',
+                    title: 'Paw0',
                     subtitle: 'First iteration of my Pocket Audio Workstation',
-                    body: 'Currently in work project PAW1 is a sandbox for my much more bigger project Pocket Audio Workstation. The idea is to create compact handy instrument to create music wherever you are. Paw1 is a wavetable synthesizer with tiny display and three encoders, featuring simple audio effects.',
-                    github: 'https://github.com/paw-music/paw-one',
+                    body: 'Currently in work project PAW0 is the starting point of my much more bigger project Pocket Audio Workstation. The idea is to create compact handy instrument to create music wherever you are. Paw0 is a wavetable synthesizer library for first version of Paw with tiny display and three encoders, featuring simple audio effects.',
+                    github: 'https://github.com/paw-music/paw-zero',
                 }, {
                     name: 'cv',
                     image: '/cv/cv.png',
@@ -162,6 +172,7 @@ export default defineI18nConfig(() => ({
             },
             year: '0 лет | {n} год | {n} года | {n} лет',
             month: '0 months | {n} месяц | {n} месяца | {n} месяцев',
+            xpInBusiness: 'опыта работы в IT-компаниях',
             finalWord: 'Пока это всё, удачи 👋',
             nodeJsDeveloper: 'Node.JS Developer',
             experience: {
@@ -189,6 +200,16 @@ export default defineI18nConfig(() => ({
                         'Проект "Бонусы на Любимые Категории" (как в банках)',
                         'Внутренняя система работы с заказами для техпо',
                         'Работа с Yandex Maps',
+                    ],
+                },
+                '01tech': {
+                    title: '01.Tech',
+                    body: 'Команда Platform tech services.',
+                    date: '23 Сентября, 2024',
+                    tasks: [
+                        'Автоматизация регистрации доменов и SSL сертификатов',
+                        'Оптимизация и синхронизация высоконагруженных кешей между сервисами. Кеширование на разных уровнях: nginx, redis, in-memory LRU',
+                        'Логика white-label и распределение данных по "tenant"ам',
                     ],
                 },
             },
@@ -260,12 +281,12 @@ export default defineI18nConfig(() => ({
                     github: 'https://github.com/hazer-hazer/embedded-ui',
                     crates: 'https://crates.io/crates/embedded-ui',
                 }, {
-                    name: 'paw1',
-                    image: '/cv/paw1.png',
-                    title: 'Paw1',
+                    name: 'paw0',
+                    image: '/cv/paw0.jpg',
+                    title: 'Paw0',
                     subtitle: 'Первая итерация моей карманной DAW',
-                    body: 'В данный момент я активно изучаю тему работы с цифровыми сигналами и разрабатываю первую модель, являющуюя частью более крупного проекта карманной аудио станции. Идея в том, чтобы иметь возможность в любом месте записывать музыку, как это делают в DAW на компьютере. Paw1 это wavetable синтезатор с 3 энкодерами, маленьким OLED дисплеем и простыми аудио эффектами',
-                    github: 'https://github.com/paw-music/paw-one',
+                    body: 'В данный момент я активно изучаю тему работы с цифровыми сигналами и разрабатываю первую модель, являющуюя частью более крупного проекта карманной аудио станции. Идея в том, чтобы иметь возможность в любом месте записывать музыку, как это делают в DAW на компьютере. Paw0 это wavetable синтезатор с 3 энкодерами, маленьким OLED дисплеем и простыми аудио эффектами',
+                    github: 'https://github.com/paw-music/paw-zero',
                 }, {
                     name: 'cv',
                     image: '/cv/cv.png',

@@ -46,6 +46,15 @@ const LOGOS = {
     jenkins: {
         label: 'Jenkins',
     },
+    nest: {
+        label: 'Nest.JS',
+    },
+    nats: {
+        label: 'Nats',
+    },
+    mariadb: {
+        label: 'MariaDB',
+    },
 }
 
 const props = defineProps<{
@@ -103,4 +112,14 @@ const { label } = LOGOS[props.logo as keyof typeof LOGOS]
     background-color: #395565;
     color: white;
 }
+.nats-logo {
+    background-color: #27AAE1;
+}
+.mariadb-logo {
+    background-color: #0B3B4A;
+}
+.nest-logo {
+    background-color: #E0234D;
+}
+
 </style>

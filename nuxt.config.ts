@@ -6,15 +6,19 @@ export default defineNuxtConfig({
             enabled: true,
         },
     },
+
     ssr: false,
     sourcemap: true,
+
     modules: [
         'nuxt-quasar-ui',
         '@nuxtjs/i18n',
     ],
+
     css: [
         '~/assets/scss/main.scss',
     ],
+
     i18n: {
         defaultLocale: 'en',
         locales: ['en', 'ru'],
@@ -24,6 +28,7 @@ export default defineNuxtConfig({
         },
         types: 'composition',
     },
+
     quasar: {
         config: {
             dark: 'auto',
@@ -42,11 +47,13 @@ export default defineNuxtConfig({
             ],
         },
     },
+
     router: {
         options: {
             scrollBehaviorType: 'smooth',
         },
     },
+
     app: {
         baseURL: '/cv/',
         head: {
@@ -64,4 +71,6 @@ export default defineNuxtConfig({
             ],
         },
     },
+
+    compatibilityDate: '2024-12-28',
 })

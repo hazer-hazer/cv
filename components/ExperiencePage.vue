@@ -19,6 +19,7 @@
                     </h6>
                     <h6
                         class="text-subtitle text-weight-light q-ma-none"
+                        style="text-shadow: 0 0 5px grey;"
                     >
                         {{ xp.job }}
                     </h6>
@@ -43,55 +44,6 @@
                     </div>
                 </div>
             </q-timeline-entry>
-            <!-- <q-timeline-entry
-                :title="$t('detmir.title')"
-                subtitle="29 August, 2023"
-                avatar="/cv/detmir.png"
-                color="blue-14"
-            >
-                <div>
-                    <p>{{ $t('detmir.body') }}</p>
-
-                    <span class="text-subtitle2">{{ $t('tasks') }}</span>
-                    <q-list dense>
-                        <q-item v-for="task in $tm('detmir.tasks')" :key="task">
-                            <q-item-section>
-                                - {{ task }}
-                            </q-item-section>
-                        </q-item>
-                    </q-list>
-
-                    <div class="stack col row q-gutter-xs justify-start">
-                        <LogoBadge v-for="logo in ['node', 'js', 'ts', 'pg', 'redis', 'kafka']" :key="logo" class="col-shrink" :logo="logo" />
-                    </div>
-                </div>
-            </q-timeline-entry>
-            <q-timeline-entry
-                :title="$t('betboom.title')"
-                subtitle="6 August, 2020"
-                color="red-8"
-                avatar="/cv/betboom.png"
-            >
-                <p>{{ $t('betboom.body') }}</p>
-
-                <div class="stack col row q-gutter-xs justify-start">
-                    <LogoBadge v-for="logo in ['ts', 'node', 'js', 'pg', 'redis', 'rmq']" :key="logo" class="col-shrink" :logo="logo" />
-                </div>
-            </q-timeline-entry>
-            <q-timeline-entry
-                :title="$t('freelance.title')"
-                subtitle="2018"
-                color="teal-6"
-                icon="groups_3"
-            >
-                <div>
-                    <p>{{ $t('freelance.body') }}</p>
-
-                    <div class="stack col row q-gutter-xs justify-start">
-                        <LogoBadge v-for="logo in ['php', 'html_css', 'js', 'ts', 'node']" :key="logo" class="col-shrink" :logo="logo" />
-            </div>
-            </div>
-            </q-timeline-entry> -->
         </q-timeline>
 
         <q-separator spaced />
@@ -132,6 +84,15 @@ const experience = computed<{
     stack: string[]
     tasks: string[]
 }[]>(() => [{
+    title: 'experience.01tech.title',
+    job: 'nodeJsDeveloper',
+    body: 'experience.01tech.body',
+    date: 'experience.01tech.date',
+    avatar: '/cv/01.tech.jpeg',
+    color: 'grey-5',
+    stack: ['node', 'ts', 'js', 'nest', 'mariadb', 'redis', 'rmq', 'nats', 'k8s'],
+    tasks: 'experience.01tech.tasks',
+}, {
     title: 'experience.detmir.title',
     job: 'nodeJsDeveloper',
     body: 'experience.detmir.body',
@@ -169,12 +130,13 @@ const experience = computed<{
 const experienceTotal = computed(() => {
     const { years, months } = yearDuration(new Date('6 august, 2020'))
 
-    return `${t('year', Math.floor(years))}, ${t('month', months)}`
+    return `${t('year', Math.floor(years))}, ${t('month', months)} ${t('xpInBusiness')}`
 })
 
+// TODO: Experience notes. Why I am marking such scores?
 const XP = [{
     label: 'Node.JS',
-    xp: 0.9,
+    xp: 0.85,
     color: 'node',
     professionally: true,
 }, {
@@ -188,8 +150,12 @@ const XP = [{
     color: 'js',
     professionally: true,
 }, {
+    label: 'Rust',
+    xp: 0.8,
+    color: 'rust',
+}, {
     label: 'skills.pgLabel',
-    xp: 0.69,
+    xp: 0.7,
     color: 'pg',
     professionally: true,
 }, {
@@ -197,12 +163,8 @@ const XP = [{
     xp: 0.7,
     color: 'vue',
 }, {
-    label: 'Rust',
-    xp: 0.81,
-    color: 'rust',
-}, {
     label: 'C++',
-    xp: 0.67,
+    xp: 0.6,
     color: 'cpp',
 }]
 </script>
@@ -258,6 +220,18 @@ const XP = [{
 
 .text-node {
     color: #3c873a;
+}
+
+.text-nats {
+    color: #27AAE1;
+}
+
+.text-mariadb {
+    color: #0B3B4A;
+}
+
+.text-nest {
+    color: #E0234D;
 }
 
 </style>

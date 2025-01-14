@@ -1,11 +1,6 @@
 <template>
     <q-layout view="Lhr lpR fFf">
-        <q-drawer
-            v-model="leftDrawerOpen"
-            side="left"
-            bordered
-            class="column justify-start"
-        >
+        <q-drawer v-model="leftDrawerOpen" side="left" bordered class="column justify-start">
             <!-- <template #mini>
                 <div class="column items-center">
                     <q-avatar class="col-auto q-mt-xs" size="50px" color="purple">
@@ -27,18 +22,13 @@
                         <q-route-tab icon="work" :to="{hash: '#experience'}" />
                         <q-route-tab icon="interests" :to="{hash: '#interests'}" />
                         <q-route-tab icon="design_services" :to="{hash: '#projects'}" />
-                    </q-tabs>
+                    </q-tabs
                 </div>
             </template> -->
 
             <div class="avatar-container col-auto row justify-center">
                 <q-avatar size="250px" color="purple">
-                    <q-img
-                        src="/cv/me.png"
-                        position="20% 40%"
-                        img-class="avatar"
-                        ratio="1"
-                    />
+                    <q-img src="/cv/me.png" position="20% 40%" img-class="avatar" ratio="1" />
                 </q-avatar>
                 <div class="column q-pt-md items-center">
                     <div class="col text-h6">
@@ -61,28 +51,28 @@
             >
                 <q-route-tab
                     :label="$t('aboutMe.title')"
-                    :to="localePath({path: '/', hash: '#about'})"
+                    :to="localePath({ path: '/', hash: '#about' })"
                     class="tab"
                     exact
                     replace
                 />
                 <q-route-tab
                     :label="$t('experience.title')"
-                    :to="localePath({path: '/', hash: '#experience'})"
+                    :to="localePath({ path: '/', hash: '#experience' })"
                     class="tab"
                     exact
                     replace
                 />
                 <q-route-tab
                     :label="$t('interests.title')"
-                    :to="localePath({path: '/', hash: '#interests'})"
+                    :to="localePath({ path: '/', hash: '#interests' })"
                     class="tab"
                     exact
                     replace
                 />
                 <q-route-tab
                     :label="$t('projects.title')"
-                    :to="localePath({path: '/', hash: '#projects'})"
+                    :to="localePath({ path: '/', hash: '#projects' })"
                     class="tab"
                     exact
                     replace
@@ -113,13 +103,15 @@
                             </q-item-label>
                         </q-item-section>
                     </q-item>
-                    <q-item v-ripple clickable href="https://hh.ru/resume/91d74636ff05823a120039ed1f776d4d465875" target="_blank">
+                    <q-item
+                        v-ripple
+                        clickable
+                        href="https://hh.ru/resume/91d74636ff05823a120039ed1f776d4d465875"
+                        target="_blank"
+                    >
                         <q-item-section avatar>
                             <q-avatar size="26px">
-                                <q-img
-                                    src="/cv/hh.png"
-                                    :ratio="1"
-                                />
+                                <q-img src="/cv/hh.png" :ratio="1" />
                             </q-avatar>
                         </q-item-section>
                         <q-item-section>
@@ -128,13 +120,15 @@
                             </q-item-label>
                         </q-item-section>
                     </q-item>
-                    <q-item v-ripple clickable href="https://stackoverflow.com/users/10563181/hazer-hazer" target="_blank">
+                    <q-item
+                        v-ripple
+                        clickable
+                        href="https://stackoverflow.com/users/10563181/hazer-hazer"
+                        target="_blank"
+                    >
                         <q-item-section avatar>
                             <q-avatar size="26px">
-                                <q-img
-                                    src="/cv/stackoverflow.png"
-                                    :ratio="1"
-                                />
+                                <q-img src="/cv/stackoverflow.png" :ratio="1" />
                             </q-avatar>
                         </q-item-section>
                         <q-item-section>
@@ -194,30 +188,23 @@
         </q-page-container>
 
         <q-footer v-if="mobileView" v-model="mobileView" reveal style="height: max-content;">
-            <a v-for="url in hitCounterUrls" :key="url" style="display: none;" href="https://hits.seeyoufarm.com"><img :src="url"></a>
+            <a v-for="url in hitCounterUrls" :key="url" style="display: none;" href="https://hits.seeyoufarm.com"><img
+                :src="url"
+            ></a>
             <q-toolbar
                 class="row q-pa-none"
                 :class="$q.dark.isActive ?
                     ['bg-dark', 'text-white'] : ['bg-white', 'text-dark']"
             >
-                <q-tabs
-                    class="col q-ma-none"
-                    indicator-color="purple"
-                    no-caps
-                    switch-indicator
-                >
-                    <q-route-tab :to="{hash: '#about'}">
+                <q-tabs class="col q-ma-none" indicator-color="purple" no-caps switch-indicator>
+                    <q-route-tab :to="{ hash: '#about' }">
                         <q-avatar class="col-auto" size="35px" color="purple">
-                            <q-img
-                                src="/cv/me.png"
-                                img-class="avatar"
-                                ratio="1"
-                            />
+                            <q-img src="/cv/me.png" img-class="avatar" ratio="1" />
                         </q-avatar>
                     </q-route-tab>
-                    <q-route-tab icon="work" :to="{hash: '#experience'}" />
-                    <q-route-tab icon="interests" :to="{hash: '#interests'}" />
-                    <q-route-tab icon="design_services" :to="{hash: '#projects'}" />
+                    <q-route-tab icon="work" :to="{ hash: '#experience' }" />
+                    <q-route-tab icon="interests" :to="{ hash: '#interests' }" />
+                    <q-route-tab icon="design_services" :to="{ hash: '#projects' }" />
                     <q-btn
                         class="col-2"
                         style="height: 100%;"
@@ -332,7 +319,8 @@ const hitCounterUrls = computed(() => [
     &::before {
         content: '';
         position: absolute;
-        left: 0; top: 50%;
+        left: 0;
+        top: 50%;
         width: 90px;
         height: 1px;
         background-color: #800080;
@@ -370,8 +358,7 @@ const hitCounterUrls = computed(() => [
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
+    animation: none;
+    mix-blend-mode: normal;
 }
-
 </style>
