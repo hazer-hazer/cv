@@ -252,6 +252,19 @@ export default defineI18nConfig(() => ({
             projects: {
                 title: 'Pet-проекты',
                 list: [{
+                    name: 'rsact',
+                    image: 'https://raw.githubusercontent.com/hazer-hazer/rsact/refs/heads/master/rsact.png',
+                    title: 'rsact',
+                    subtitle: 'UI framework powered by fine-grained reactivity targeting embedded Rust',
+                    github: 'https://github.com/hazer-hazer/rsact',
+                }, {
+                    name: 'paw0',
+                    image: '/cv/paw0.jpg',
+                    title: 'Paw0',
+                    subtitle: 'Первая итерация моей карманной DAW',
+                    body: 'В данный момент я активно изучаю тему работы с цифровыми сигналами и разрабатываю первую модель, являющуюя частью более крупного проекта карманной аудио станции. Идея в том, чтобы иметь возможность в любом месте записывать музыку, как это делают в DAW на компьютере. Paw0 это wavetable синтезатор с 3 энкодерами, маленьким OLED дисплеем и простыми аудио эффектами',
+                    github: 'https://github.com/paw-music/paw-zero',
+                }, {
                     name: 'inventory',
                     image: '/cv/inventory.png',
                     title: 'Инвентарь',
@@ -265,29 +278,18 @@ export default defineI18nConfig(() => ({
                     subtitle: 'Мой последний проект языка программирования для самообучения',
                     body: 'Impact это язык песочница, созданный для практики в темах разработки компиляторов, таких как: уточняющие типы, алгебраические эффеты и анализ потоков данных',
                     github: 'https://github.com/hazer-hazer/impact',
-                }, {
-                    name: 'rsact',
-                    image: 'https://raw.githubusercontent.com/hazer-hazer/rsact/refs/heads/master/rsact.png',
-                    title: 'rsact',
-                    subtitle: 'UI framework powered by fine-grained reactivity targeting embedded Rust',
-                    github: 'https://github.com/hazer-hazer/rsact',
-                }, {
-                    abandoned: true,
-                    name: 'embedded-ui',
-                    image: '/cv/embedded-ui.png',
-                    title: 'Rust embedded-ui',
-                    subtitle: 'Rust GUI библиотека для встроенных систем',
-                    body: 'Простая, но мощная универсальная GUI библиотека вдохновленная Elm (iced) архитектурой. Включает стандартные типы компонентов, такие как Button, Scrollable и т.д. Работает с любым типом дисплеев, даже одноцветным. Поддерживает любые способы управления: разрабатывалась под возможность управления одним энкодером.',
-                    github: 'https://github.com/hazer-hazer/embedded-ui',
-                    crates: 'https://crates.io/crates/embedded-ui',
-                }, {
-                    name: 'paw0',
-                    image: '/cv/paw0.jpg',
-                    title: 'Paw0',
-                    subtitle: 'Первая итерация моей карманной DAW',
-                    body: 'В данный момент я активно изучаю тему работы с цифровыми сигналами и разрабатываю первую модель, являющуюя частью более крупного проекта карманной аудио станции. Идея в том, чтобы иметь возможность в любом месте записывать музыку, как это делают в DAW на компьютере. Paw0 это wavetable синтезатор с 3 энкодерами, маленьким OLED дисплеем и простыми аудио эффектами',
-                    github: 'https://github.com/paw-music/paw-zero',
-                }, {
+                },
+                // {
+                //     abandoned: true,
+                //     name: 'embedded-ui',
+                //     image: '/cv/embedded-ui.png',
+                //     title: 'Rust embedded-ui',
+                //     subtitle: 'Rust GUI библиотека для встроенных систем',
+                //     body: 'Простая, но мощная универсальная GUI библиотека вдохновленная Elm (iced) архитектурой. Включает стандартные типы компонентов, такие как Button, Scrollable и т.д. Работает с любым типом дисплеев, даже одноцветным. Поддерживает любые способы управления: разрабатывалась под возможность управления одним энкодером.',
+                //     github: 'https://github.com/hazer-hazer/embedded-ui',
+                //     crates: 'https://crates.io/crates/embedded-ui',
+                // },
+                {
                     name: 'cv',
                     image: '/cv/cv.png',
                     title: 'Этот сайт',

@@ -5,22 +5,13 @@
                 <section-link :label="$t('experience.title')" hash="#experience" class="q-pa-none" />
             </q-timeline-entry>
             <q-timeline-entry color="purple" :title="$t('now.title')" :subtitle="experienceTotal" />
-            <q-timeline-entry
-                v-for="xp in experience"
-                :key="xp.title"
-                :subtitle="xp.date"
-                :avatar="xp.avatar"
-                :icon="xp.icon"
-                :color="xp.color"
-            >
+            <q-timeline-entry v-for="xp in experience" :key="xp.title" :subtitle="xp.date" :avatar="xp.avatar"
+                :icon="xp.icon" :color="xp.color">
                 <template #title>
                     <h6 class="q-timeline__title">
                         {{ xp.title }}
                     </h6>
-                    <h6
-                        class="text-subtitle text-weight-light q-ma-none"
-                        style="text-shadow: 0 0 5px grey;"
-                    >
+                    <h6 class="text-subtitle text-weight-light q-ma-none" style="text-shadow: 0 0 5px grey;">
                         {{ xp.job }}
                     </h6>
                 </template>
@@ -54,13 +45,7 @@
             <div v-for="xp in XP" :key="xp.label" class="tech-xp q-pb-sm">
                 <span class=" text-subtitle1">{{ $t(xp.label) }}</span>
                 <div class="row items-center">
-                    <q-linear-progress
-                        class="col"
-                        size="10px"
-                        :value="xp.xp"
-                        rounded
-                        :color="xp.color"
-                    />
+                    <q-linear-progress class="col" size="10px" :value="xp.xp" rounded :color="xp.color" />
                     <!-- <div v-if="xp.professionally" class="col-auto text-caption q-px-md">
                         {{ $t('skills.professionally') }}
                     </div> -->
@@ -90,7 +75,7 @@ const experience = computed<{
     date: 'experience.01tech.date',
     avatar: '/cv/01.tech.jpeg',
     color: 'grey-5',
-    stack: ['node', 'ts', 'js', 'nest', 'mariadb', 'redis', 'rmq', 'nats', 'k8s'],
+    stack: ['node', 'ts', 'js', 'nest', 'mariadb', 'redis', 'rmq', 'nats', 'k8s', 'microservices'],
     tasks: 'experience.01tech.tasks',
 }, {
     title: 'experience.detmir.title',
@@ -99,7 +84,7 @@ const experience = computed<{
     date: 'experience.detmir.date',
     avatar: '/cv/detmir.png',
     color: 'blue-14',
-    stack: ['node', 'js', 'ts', 'pg', 'redis', 'kafka', 'k8s', 'jenkins'],
+    stack: ['node', 'js', 'ts', 'pg', 'redis', 'kafka', 'k8s', 'jenkins', 'monolithic'],
     tasks: 'experience.detmir.tasks',
 }, {
     title: 'experience.betboom.title',
@@ -108,7 +93,7 @@ const experience = computed<{
     date: 'experience.betboom.date',
     avatar: '/cv/betboom.png',
     color: 'red-8',
-    stack: ['node', 'ts', 'js', 'pg', 'redis', 'rmq', 'k8s'],
+    stack: ['node', 'ts', 'js', 'pg', 'redis', 'rmq', 'k8s', 'microservices'],
     tasks: 'experience.betboom.tasks',
 }, {
     title: 'experience.freelance.title',
@@ -173,25 +158,25 @@ const XP = [{
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 .normal-p {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 3rem;
-  color: mix(white, purple, 90%);
-  text-shadow: -1px 1px 1px purple, 1px -1px 1px purple;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 3rem;
+    color: mix(white, purple, 90%);
+    text-shadow: -1px 1px 1px purple, 1px -1px 1px purple;
 }
 
 .text {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: max-content;
-  padding: 10px 50px;
-  text-align: center;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: max-content;
+    padding: 10px 50px;
+    text-align: center;
 }
 
 .stack {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .text-rust {
@@ -234,4 +219,11 @@ const XP = [{
     color: #E0234D;
 }
 
+.text-microservices {
+    color: lightsalmon;
+}
+
+.text-monolithic {
+    color: lightseagreen;
+}
 </style>
