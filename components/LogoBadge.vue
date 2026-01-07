@@ -1,8 +1,5 @@
 <template>
-    <q-badge
-        :class="`${logo}-logo logo`"
-        :label="label"
-    />
+    <q-badge :class="`${logo}-logo logo`" :label="label" />
 </template>
 
 <script lang="ts" setup>
@@ -55,6 +52,12 @@ const LOGOS = {
     mariadb: {
         label: 'MariaDB',
     },
+    microservices: {
+        label: 'Microservices',
+    },
+    monolithic: {
+        label: 'Monolithic',
+    }
 }
 
 const props = defineProps<{
@@ -78,48 +81,68 @@ const { label } = LOGOS[props.logo as keyof typeof LOGOS]
 .html_css-logo {
     background-color: #e34d26;
 }
+
 .redis-logo {
     background-color: #dc372c;
 }
+
 .js-logo {
     background-color: #f0db4f;
     color: #323330;
 }
+
 .ts-logo {
     background-color: #3178c6;
 }
+
 .node-logo {
     background-color: #3c873a;
 }
+
 .php-logo {
     background-color: #474a8a;
 }
+
 .pg-logo {
     background-color: #336790;
 }
+
 .rmq-logo {
     background-color: #ff6600;
 }
+
 .kafka-logo {
     background-color: black;
     color: white;
 }
+
 .k8s-logo {
     background-color: #3970e5;
     color: white;
 }
+
 .jenkins-logo {
     background-color: #395565;
     color: white;
 }
+
 .nats-logo {
     background-color: #27AAE1;
 }
+
 .mariadb-logo {
     background-color: #0B3B4A;
 }
+
 .nest-logo {
     background-color: #E0234D;
 }
 
+.microservices-logo {
+    background-color: lightcoral;
+}
+
+.monolithic-logo {
+    background-color: lightseagreen;
+}
 </style>

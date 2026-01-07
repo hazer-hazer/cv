@@ -218,12 +218,4 @@ const XP = [{
 .text-nest {
     color: #E0234D;
 }
-
-.text-microservices {
-    color: lightsalmon;
-}
-
-.text-monolithic {
-    color: lightseagreen;
-}
 </style>

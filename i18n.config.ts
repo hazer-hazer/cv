@@ -39,6 +39,7 @@ export default defineI18nConfig(() => ({
             month: '{n} month | {n} months',
             finalWord: 'That\'s all for now, good luck 👋',
             nodeJsDeveloper: 'Node.JS Developer',
+            xpInBusiness: 'experience in commercial development',
             experience: {
                 title: 'Experience',
                 freelance: {
@@ -172,7 +173,7 @@ export default defineI18nConfig(() => ({
             },
             year: '0 лет | {n} год | {n} года | {n} лет',
             month: '0 months | {n} месяц | {n} месяца | {n} месяцев',
-            xpInBusiness: 'опыта работы в IT-компаниях',
+            xpInBusiness: 'опыта в коммерческой разработке',
             finalWord: 'Пока это всё, удачи 👋',
             nodeJsDeveloper: 'Node.JS Developer',
             experience: {
